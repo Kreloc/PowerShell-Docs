@@ -101,6 +101,12 @@ PS C:\> Compress-Archive -Path C:\Reference -DestinationPath C:\Archives\Draft
 This command creates an archive from an entire folder, C:\Reference.
 Note that though the file name extension .zip was not added to the value of the *DestinationPath* parameter, Windows PowerShell appends this to the specified archive file name automatically.
 
+### Example 5: Create an archive from an entire folder and its subdirectories by piping
+```
+PS C:\> Get-ChildItem C:\Reference -Recurse | Compress-Archive -DestinationPath C:\Archives\Draft
+```
+This command creates an archive from the folder paths piped to it from the Get-ChildItem command.
+
 ## PARAMETERS
 
 ### -CompressionLevel
